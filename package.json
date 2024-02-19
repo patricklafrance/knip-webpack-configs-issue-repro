@@ -1,0 +1,42 @@
+{
+    "name": "knip-webpack-configs-issue-repro",
+    "version": "0.0.0",
+    "description": "",
+    "license": "Apache-2.0",
+    "type": "module",
+    "scripts": {
+        "dev": "webpack serve --config webpack.dev.js",
+        "lint": "pnpm run \"/^lint:.*/\"",
+        "lint:eslint": "eslint . --max-warnings=-1 --cache --cache-location node_modules/.cache/eslint",
+        "lint:knip": "knip",
+        "clean": "pnpm exec pnpm dlx rimraf dist node_modules/.cache",
+        "reset": "pnpm clean && pnpm dlx rimraf node_modules pnpm-lock.yaml",
+        "list-outdated-deps": "pnpm outdated -r --format list",
+        "update-outdated-deps": "pnpm update -r --latest"
+    },
+    "devDependencies": {
+        "@swc/core": "1.4.0",
+        "@swc/helpers": "0.5.6",
+        "@types/node": "20.11.19",
+        "@types/react": "18.2.55",
+        "@types/react-dom": "18.2.19",
+        "@typescript-eslint/parser": "6.21.0",
+        "@workleap/browserslist-config": "2.0.0",
+        "@workleap/eslint-plugin": "3.0.0",
+        "@workleap/swc-configs": "2.2.0",
+        "@workleap/typescript-configs": "3.0.2",
+        "@workleap/webpack-configs": "1.3.0",
+        "browserslist": "4.22.3",
+        "eslint": "8.56.0",
+        "knip": "5.0.1",
+        "typescript": "5.3.3",
+        "webpack": "5.90.1",
+        "webpack-cli": "5.1.4",
+        "webpack-dev-server": "4.15.1"
+    },
+    "dependencies": {
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-router-dom": "6.22.0"
+    }
+}
